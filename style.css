@@ -1,0 +1,149 @@
+:root {
+  --primary-text: #2d3436;
+  --secondary-text: #636e72;
+  --bg-color: #f5f6fa;
+  --card-bg: #ffffff;
+  --accent-color: #0984e3;
+  --focus-outline: #0984e3;
+  --border-color: #dfe6e9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--primary-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+}
+
+.profile-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary-text);
+}
+
+.bio {
+  color: var(--secondary-text);
+  font-size: 1.1rem;
+}
+
+.time-display {
+  font-weight: 600;
+  font-family: monospace;
+  background: #f1f2f6;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.social-links a:hover {
+  background-color: #ebf5ff;
+}
+
+.social-links a:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.lists-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.list-section h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-text);
+}
+
+.list-section ul {
+  list-style-position: inside;
+  color: var(--secondary-text);
+}
+
+@media (min-width: 768px) {
+  .profile-card {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 3rem;
+    text-align: left;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+
+  .profile-avatar-container {
+    flex-shrink: 0;
+  }
+
+  .lists-container {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
